@@ -13,14 +13,12 @@ class CustomTopTab extends Component {
                     title: 'Promos',
                     iconName: 'tag',
                     iconType: 'ionicon',
-                    index: 0,
                     route: 'promos'
                 },
                 {
                     title: 'Home',
                     iconName: 'home',
                     iconType: 'ionicon',
-                    index: 1,
                     route: 'home'
 
                 },
@@ -28,7 +26,6 @@ class CustomTopTab extends Component {
                     title: 'Chat',
                     iconName: 'comment',
                     iconType: 'ionicon',
-                    index: 2,
                     route: 'chat'
 
                 }
@@ -78,22 +75,10 @@ class CustomTopTab extends Component {
         const { routes, index } = state;
         const activeIndex = index
         const { tabs, activeTabHeight, activeTabTranslateX, activeTabWidth, selectedTabIndex } = this.state;
-        // if (tabs[activeIndex].x) {
-        //     // this.handleOnPress(tabs[activeIndex], activeIndex)
-        //     console.log("Current Object", tabs[activeIndex], "active index", activeIndex)
-        // }
         if (tabs[activeIndex].x && selectedTabIndex != activeIndex) {
             this.handleOnPress(tabs[activeIndex], activeIndex)
-            //  console.log("CHecing Active tab Current Object", tabs[activeIndex], "active index", activeIndex)
         }
-        // if (tabs[activeIndex].x && activeIndex === 0) {
-        //      this.handleOnPress(tabs[activeIndex], activeIndex)
-        //  }
-        //   else if (tabs[activeIndex].x && activeIndex === 1) {
-        //      this.handleOnPress(tabs[activeIndex], activeIndex)
-        //  } else if (tabs[activeIndex].x && activeIndex === 2) {
-        //      this.handleOnPress(tabs[activeIndex], activeIndex)
-        //  }
+        
         return (
             <View style={{ backgroundColor: 'skyblue', paddingTop: sizes.statusBarHeight * 1.5 }}>
                 <View style={styles.container}>
