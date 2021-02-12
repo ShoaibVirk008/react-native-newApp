@@ -15,12 +15,23 @@ const CustomBottomSheet = ({ content }) => {
 
             }}
             snapPoints={[height(10), height(50), height(85)]}
-            borderRadius={20}
+            borderRadius={0}
             initialSnap={1}
+            style={{ backgroundColor: 'red' }}
+            //enabledGestureInteraction={true}
+            enabledContentGestureInteraction={false}
+            // enabledHeaderGestureInteraction={true}
+
+            renderHeader={() => {
+                return (
+                    <Wrapper style={styles.bottomSheetHeader}>
+                        <View style={styles.bottomSheetBarThick} />
+                    </Wrapper>
+                )
+            }}
             renderContent={() => {
                 return (
                     <View style={styles.bottomSheetContainer}>
-                        <View style={styles.bottomSheetBarThick} />
                         {content}
                     </View>
                 );
@@ -33,10 +44,20 @@ export { CustomBottomSheet };
 
 
 const styles = StyleSheet.create({
+    bottomSheetHeader: {
+        backgroundColor: '#FFFFFF',
+        borderTopRightRadius: 25,
+        borderTopLeftRadius: 25,
+        height: height(4),
+        marginBottom: 0,
+        borderBottomWidth: 0,
+        justifyContent: 'center',
+    },
     bottomSheetContainer: {
-        backgroundColor: '#f2f2f6',
-        padding: 16,
+        backgroundColor: '#FFFFFF',
+        // padding: 16,
         height: height(85),
+        // marginTop: 0
     },
     bottomSheetBarThick: {
         height: 3,
